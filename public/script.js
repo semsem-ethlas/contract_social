@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const contractAddress = document.getElementById("contract-address").value;
 
     try {
-      const response = await fetch("./audit", {
+      const response = await fetch("/contract_social/audit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
