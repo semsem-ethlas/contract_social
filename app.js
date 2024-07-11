@@ -9,7 +9,7 @@ const port = 3001;
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-app.post("/audit", async (req, res) => {
+app.post("./audit", async (req, res) => {
   const { contractAddress } = req.body;
   try {
     const auditResult = await auditSmartContract(contractAddress);
