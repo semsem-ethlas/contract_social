@@ -6,13 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const contractAddress = document.getElementById("contract-address").value;
 
     try {
-      const response = await fetch("/contract_social/audit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ contractAddress }),
-      });
+      const response = await fetch(
+        "http://ec2-3-92-200-167.compute-1.amazonaws.com:3001/audit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ contractAddress }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
